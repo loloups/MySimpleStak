@@ -13,21 +13,13 @@ public class AppTest
     /**
      * Create the test case
      *
-     * @param testName name of the test case
+     *
      */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
+    public AppTest()
     {
-        return new TestSuite( AppTest.class );
+        super("MonTest");
     }
-
     /**
      * Rigourous Test :-)
      */
@@ -35,4 +27,19 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+    public void testIsEmpty() {
+        MySimpleStack stack = new MySimpleStack();
+        this.assertTrue(stack.isEmpty());
+    }
+
+    public void testGetSize() {
+        MySimpleStack stack = new MySimpleStack();
+        char [] nom = {'c','e'};
+        stack.push(new Item(nom));
+        stack.push(new Item(nom));
+        stack.push(new Item(nom));
+        this.assertEquals(3,stack.getSize());
+    }
+
 }
